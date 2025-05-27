@@ -83,7 +83,6 @@ public class AffiliationrelController {
             int affiliationID = Integer.parseInt(view.getTxtAffiliationID().getText().trim());
             String strength = view.getTxtStrength().getText().trim();
 
-            // Kiểm tra agentID và affiliationID có tồn tại không
             if (!AgentDAO.getInstance().isAgentIDExists(agentID)) {
                 JOptionPane.showMessageDialog(view, "Lỗi: Agent ID không tồn tại trong bảng agent!", "Lỗi", JOptionPane.ERROR_MESSAGE);
                 return;

@@ -22,10 +22,10 @@ public class AgentSalaryChart extends JPanel {
 
         JFreeChart chart = ChartFactory.createBarChart(
                 "Average Agent Salary by Country",
-                "Country",
-                "Avg Salary (USD)",
+                "Avg Salary (USD)",   
+                "Country",            
                 dataset,
-                PlotOrientation.VERTICAL,
+                PlotOrientation.HORIZONTAL, 
                 false, true, false);
 
         chart.setBackgroundPaint(Color.white);
@@ -48,13 +48,12 @@ public class AgentSalaryChart extends JPanel {
         chartPanel.setMouseWheelEnabled(true);
         chartPanel.setPreferredSize(new Dimension(800, 500));
 
-        
         ImageIcon refreshIcon = new ImageIcon(getClass().getResource("/icon/refresh.png"));
         Image image = refreshIcon.getImage().getScaledInstance(24, 24, Image.SCALE_SMOOTH);
         refreshIcon = new ImageIcon(image);
         JButton refreshButton = new JButton("Refresh", refreshIcon);
-        refreshButton.setHorizontalTextPosition(SwingConstants.CENTER); // Chữ canh giữa
-        refreshButton.setVerticalTextPosition(SwingConstants.BOTTOM); // Chữ nằm dưới icon
+        refreshButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        refreshButton.setVerticalTextPosition(SwingConstants.BOTTOM);
         refreshButton.setFocusPainted(false);
         refreshButton.setBackground(new Color(100, 149, 237));
         refreshButton.setForeground(Color.WHITE);

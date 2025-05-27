@@ -57,7 +57,8 @@ public class AffiliationDAO implements DAOInterface<Affiliation>{
 		int result = 0;
 		try {
 			Connection c = JDBCUtil.getConnection();
-			String sql = "DELETE FROM affiliation WHERE affiliation_id=?";            PreparedStatement pst = c.prepareStatement(sql);
+			String sql = "DELETE FROM affiliation WHERE affiliation_id=?";   
+			PreparedStatement pst = c.prepareStatement(sql);
             pst.setInt(1, t.getAffiliation_id());
             result = pst.executeUpdate();
             pst.close();
@@ -244,7 +245,7 @@ public class AffiliationDAO implements DAOInterface<Affiliation>{
 	        PreparedStatement pst = c.prepareStatement(sql);
 	        pst.setInt(1, affiliationID);
 	        ResultSet rs = pst.executeQuery();
-	        exists = rs.next(); // Nếu có ít nhất 1 dòng => tồn tại
+	        exists = rs.next(); 
 	        rs.close();
 	        pst.close();
 	        JDBCUtil.closeConnection(c);

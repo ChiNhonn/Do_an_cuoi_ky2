@@ -16,7 +16,6 @@ public class LanguagerelManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ====== Tool panel (chứa các nút và ô tìm kiếm) ======
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Functions"));
 
@@ -32,7 +31,6 @@ public class LanguagerelManagementJPanel extends JPanel {
         toolPanel.add(btnSearch);
         toolPanel.add(txtSearch);
 
-        // ====== Input panel (AgentID, LanguageID) ======
         JPanel inputPanel = new JPanel(new GridLayout(1, 4, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Input"));
 
@@ -44,7 +42,6 @@ public class LanguagerelManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Language ID:"));
         inputPanel.add(txtLanguageID);
 
-        // ====== Gộp top panel ======
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
@@ -52,7 +49,6 @@ public class LanguagerelManagementJPanel extends JPanel {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // ====== Table panel ======
         tableModel = new DefaultTableModel(new String[]{"Agent ID", "Language ID"}, 0);
         table = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
@@ -60,7 +56,6 @@ public class LanguagerelManagementJPanel extends JPanel {
 
         add(scrollPane, BorderLayout.CENTER);
 
-        // ====== Bottom panel (Label tổng số bản ghi) ======
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         lblCount = new JLabel("Total: 0");
         bottomPanel.add(lblCount);
@@ -102,7 +97,6 @@ public class LanguagerelManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tableModel; }
     public JTextField getTxtAgentID() { return txtAgentID; }

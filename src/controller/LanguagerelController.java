@@ -40,19 +40,16 @@ public class LanguagerelController {
             int agentID = Integer.parseInt(view.getTxtAgentID().getText().trim());
             int languageID = Integer.parseInt(view.getTxtLanguageID().getText().trim());
 
-            // Check if agentID exists
             if (!AgentDAO.getInstance().isAgentIDExists(agentID)) {
                 JOptionPane.showMessageDialog(view, "Agent ID does not exist!", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            // Check if languageID exists
             if (!LanguageDAO.getInstance().isLanguageIDExists(languageID)) {
                 JOptionPane.showMessageDialog(view, "Language ID does not exist!", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            // Check if relation already exists
             if (LanguagerelDAO.getInstance().exists(new Languagerel(agentID, languageID))) {
                 JOptionPane.showMessageDialog(view, "This relation already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;

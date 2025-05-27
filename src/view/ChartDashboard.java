@@ -35,8 +35,7 @@ import javax.swing.JLabel;
 public class ChartDashboard extends JFrame {
     private JPanel mainPanel;
     private JLabel backgroundLabel;
-    private ImageIcon backgroundIcon;// Declare backgroundLabel at class level to access it in the listener
-
+    private ImageIcon backgroundIcon;
     public ChartDashboard() {
         setTitle("Statistical Charts");
         setSize(1200, 800);
@@ -52,7 +51,7 @@ public class ChartDashboard extends JFrame {
         }
 
         String[] chartList = {
-            "Agent Count by Country",
+            "Agent Distribution by Country",
             "Average Salary by Country",
             "Mission Status by Location",
             "Number of Agents per Skill",
@@ -62,36 +61,29 @@ public class ChartDashboard extends JFrame {
         mainPanel = new JPanel(new BorderLayout());
 
         backgroundIcon = new ImageIcon(getClass().getResource("/icon/ChartDashboard.jpg"));
-        backgroundLabel = new JLabel(backgroundIcon); // Initialize here
+        backgroundLabel = new JLabel(backgroundIcon); 
         backgroundLabel.setHorizontalAlignment(SwingConstants.CENTER);
         backgroundLabel.setVerticalAlignment(SwingConstants.CENTER);
         mainPanel.add(backgroundLabel, BorderLayout.CENTER);
 
         JList<String> chartMenu = new JList<>(chartList);
-        // Apply styling from Dashboard2
-        chartMenu.setFont(new Font("Segoe UI", Font.PLAIN, 14)); // Kept font size at 14, can be adjusted
+        chartMenu.setFont(new Font("Segoe UI", Font.PLAIN, 14)); 
         chartMenu.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        chartMenu.setBackground(new Color(173, 216, 230)); // Light blue
-        chartMenu.setForeground(Color.BLACK);
-        chartMenu.setSelectionBackground(new Color(135, 206, 250)); // Lighter blue for selection
+        chartMenu.setBackground(new Color(173, 216, 230)); 
+        chartMenu.setSelectionBackground(new Color(135, 206, 250)); 
         chartMenu.setSelectionForeground(Color.BLACK);
-        chartMenu.setFixedCellHeight(40); // Set fixed height for cells
-        // For natural width, we don't set alignmentX on the JList directly for width control.
-        // It's more about how it aligns within its parent's layout.
+        chartMenu.setFixedCellHeight(40);
 
-        // Center the text in each list item
         DefaultListCellRenderer renderer = (DefaultListCellRenderer) chartMenu.getCellRenderer();
         renderer.setHorizontalAlignment(SwingConstants.CENTER); 
 
         JScrollPane listScrollPane = new JScrollPane(chartMenu);
-        // Do NOT set a preferred size for the scroll pane here. 
-        // This allows it to calculate its width based on the content.
-        listScrollPane.setBorder(BorderFactory.createEmptyBorder()); // Remove border from scroll pane
+        listScrollPane.setBorder(BorderFactory.createEmptyBorder()); 
 
 
         JPanel leftPanel = new JPanel();
-        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS)); // Use BoxLayout for vertical arrangement
-        leftPanel.setBackground(new Color(173, 216, 230)); // Light blue background
+        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS)); 
+        leftPanel.setBackground(new Color(173, 216, 230)); 
 
         JPanel headerPanel = new JPanel();
         headerPanel.setBackground(new Color(173, 216, 230));
@@ -100,12 +92,12 @@ public class ChartDashboard extends JFrame {
 
         JLabel chartCategoryLabel = new JLabel("Chart Categories");
         chartCategoryLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
-        chartCategoryLabel.setForeground(new Color(0, 0, 139)); // Dark blue
+        chartCategoryLabel.setForeground(new Color(0, 0, 139)); 
         chartCategoryLabel.setAlignmentX(Component.CENTER_ALIGNMENT); 
 
-        headerPanel.add(javax.swing.Box.createHorizontalGlue()); // Add glue for centering
+        headerPanel.add(javax.swing.Box.createHorizontalGlue()); 
         headerPanel.add(chartCategoryLabel);
-        headerPanel.add(javax.swing.Box.createHorizontalGlue()); // Add glue for centering
+        headerPanel.add(javax.swing.Box.createHorizontalGlue()); 
 
         leftPanel.add(headerPanel);
         leftPanel.add(listScrollPane);
@@ -136,7 +128,6 @@ public class ChartDashboard extends JFrame {
         getContentPane().add(leftPanel, BorderLayout.WEST);
         getContentPane().add(mainPanel, BorderLayout.CENTER);
 
-     // Thay thế đoạn chartMenu.addListSelectionListener(...) bằng đoạn dưới:
         chartMenu.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -147,7 +138,7 @@ public class ChartDashboard extends JFrame {
                     String selectedValue = chartMenu.getModel().getElementAt(index);
                     showChart(selectedValue);
                 } else {
-                    chartMenu.clearSelection(); // Bỏ chọn
+                    chartMenu.clearSelection(); 
                     mainPanel.removeAll();
                     mainPanel.setLayout(new BorderLayout());
                     mainPanel.add(backgroundLabel, BorderLayout.CENTER);
@@ -164,7 +155,7 @@ public class ChartDashboard extends JFrame {
         mainPanel.removeAll();
 
         switch (selected) {
-            case "Agent Count by Country":
+            case "Agent Distribution by Country":
                 AgentChart agentChart = new AgentChart();
                 mainPanel.add(agentChart, BorderLayout.CENTER);
                 break;

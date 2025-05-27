@@ -144,7 +144,6 @@ public class MissionDAO implements DAOInterface<Mission> {
             pst = c.prepareStatement(sql);
 
             String searchKey = "%" + keyword + "%";
-            // set tham số 7 lần
             for (int i = 1; i <= 7; i++) {
                 pst.setString(i, searchKey);
             }

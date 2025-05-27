@@ -47,7 +47,7 @@ public class LanguageDAO implements DAOInterface<Language> {
 	        pst.setString(1, t.getLanguage_name());
 	        pst.setInt(2, t.getLanguage_ID());
 	        
-	        result = pst.executeUpdate();  // Thực thi câu lệnh update
+	        result = pst.executeUpdate();  
 	        
 	        pst.close();
 	        JDBCUtil.closeConnection(c);

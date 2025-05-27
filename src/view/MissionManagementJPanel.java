@@ -18,7 +18,6 @@ public class MissionManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // Thanh công cụ
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -36,7 +35,6 @@ public class MissionManagementJPanel extends JPanel {
         toolPanel.add(txtSearch);
         toolPanel.add(btnRefresh);
 
-        // Panel group stats option (bạn có thể bỏ nếu muốn)
         JPanel groupPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         groupPanel.setBorder(BorderFactory.createTitledBorder("Group Statistics Option"));
 
@@ -49,7 +47,6 @@ public class MissionManagementJPanel extends JPanel {
         groupPanel.add(comboField1);
         groupPanel.add(comboField2);
 
-        // Form nhập liệu
         JPanel inputPanel = new JPanel(new GridLayout(4, 4, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Mission Information"));
 
@@ -68,25 +65,22 @@ public class MissionManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Access ID:"));        inputPanel.add(txtAccessID);
         inputPanel.add(new JLabel("Team ID:"));          inputPanel.add(txtTeamID);
         inputPanel.add(new JLabel("Mission Status:"));   inputPanel.add(txtMissionStatus);
-        inputPanel.add(new JLabel());  inputPanel.add(new JLabel()); // filler
+        inputPanel.add(new JLabel());  inputPanel.add(new JLabel()); 
 
-        // Gộp top panel
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
-        topPanel.add(groupPanel);  // bạn muốn bỏ thì comment dòng này
+        topPanel.add(groupPanel); 
         topPanel.add(inputPanel);
 
         add(topPanel, BorderLayout.NORTH);
 
-        // Bảng mission list
         tablemodel = new DefaultTableModel(
                 new String[]{"Mission ID", "Mission Name", "Location", "Agent ID", "AccessID", "TeamID", "Mission Status"}, 0);
         table = new JTable(tablemodel);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBorder(BorderFactory.createTitledBorder("Mission List"));
 
-        // Panel trung tâm chứa bảng và label count
         JPanel centerPanel = new JPanel(new BorderLayout(10, 10));
         centerPanel.add(scrollPane, BorderLayout.CENTER);
 
@@ -133,7 +127,6 @@ public class MissionManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getter (nếu cần)
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tablemodel; }
     public JTextField getTxtMissionID() { return txtMissionID; }

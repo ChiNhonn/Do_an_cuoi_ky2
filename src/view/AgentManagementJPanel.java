@@ -18,7 +18,6 @@ public class AgentManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ==== Hàng 1: Thanh công cụ ====
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -36,7 +35,6 @@ public class AgentManagementJPanel extends JPanel {
         toolPanel.add(txtSearch);
         toolPanel.add(btnRefresh);
 
-        // ==== Hàng 2: Group Stats + ComboBox ====
         JPanel groupPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         groupPanel.setBorder(BorderFactory.createTitledBorder("Group Statistics Option"));
 
@@ -49,7 +47,6 @@ public class AgentManagementJPanel extends JPanel {
         groupPanel.add(comboField1);
         groupPanel.add(comboField2);
 
-        // ==== Hàng 3: Form nhập liệu Agent ====
         JPanel inputPanel = new JPanel(new GridLayout(4, 4, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Agent Information"));
 
@@ -70,7 +67,6 @@ public class AgentManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Salary:")); inputPanel.add(txtSalary);
         inputPanel.add(new JLabel()); inputPanel.add(new JLabel()); // filler
 
-        // ==== Gộp topPanel ====
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
@@ -78,10 +74,8 @@ public class AgentManagementJPanel extends JPanel {
         topPanel.add(inputPanel);
         add(topPanel, BorderLayout.NORTH);
 
-        // ==== Panel trung tâm: chứa bảng Agent và Total ====
         JPanel centerPanel = new JPanel(new BorderLayout());
 
-        // ==== Table Agent ====
         tablemodel = new DefaultTableModel(
                 new String[]{"Agent ID", "First Name", "Last Name", "Address", "City", "Country", "Salary"}, 0);
         table = new JTable(tablemodel);
@@ -89,7 +83,6 @@ public class AgentManagementJPanel extends JPanel {
         scrollPane.setBorder(BorderFactory.createTitledBorder("Agent List"));
         centerPanel.add(scrollPane, BorderLayout.CENTER);
 
-        // ==== Count Label ====
         lblCount = new JLabel("Total: 0");
         JPanel countPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         countPanel.add(lblCount);
@@ -132,7 +125,6 @@ public class AgentManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters giữ nguyên
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tablemodel; }
     public JTextField getTxtAgentID() { return txtAgenID; }

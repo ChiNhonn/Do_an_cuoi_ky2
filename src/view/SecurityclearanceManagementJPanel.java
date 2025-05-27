@@ -11,15 +11,11 @@ public class SecurityclearanceManagementJPanel extends JPanel {
     private JTextField txtScID, txtScLevel, txtDescription, txtSearch;
     private JLabel lblCount;
     private JButton btnAdd, btnUpdate, btnDelete, btnRefresh, btnSearch;
-    // Nếu muốn thêm group stats cho Security clearance thì bật lên sau, giờ tạm ẩn
-    // private JButton btnGroupStats;
-    // private JComboBox<String> comboField1, comboField2;
 
     public SecurityclearanceManagementJPanel() {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ====== Hàng 1: Thanh công cụ ======
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -37,23 +33,6 @@ public class SecurityclearanceManagementJPanel extends JPanel {
         toolPanel.add(txtSearch);
         toolPanel.add(btnRefresh);
 
-        // ====== Hàng 2: (Group Stats nếu cần) ======
-        // Ẩn tạm, nếu muốn kích hoạt, uncomment phần này
-        /*
-        JPanel groupPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
-        groupPanel.setBorder(BorderFactory.createTitledBorder("Group Statistics Option"));
-
-        btnGroupStats = createIconButton("Group Stats", "/icon/groupIcon.png");
-        comboField1 = new JComboBox<>(new String[]{"sc_id", "level", "description"});
-        comboField2 = new JComboBox<>(new String[]{"sc_id", "level", "description"});
-
-        groupPanel.add(btnGroupStats);
-        groupPanel.add(new JLabel("Group by:"));
-        groupPanel.add(comboField1);
-        groupPanel.add(comboField2);
-        */
-
-        // ====== Hàng 3: Form nhập liệu Security Clearance ======
         JPanel inputPanel = new JPanel(new GridLayout(2, 6, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Security Clearance Information"));
 
@@ -67,7 +46,6 @@ public class SecurityclearanceManagementJPanel extends JPanel {
         inputPanel.add(txtScLevel);
         inputPanel.add(new JLabel("Description:"));
         inputPanel.add(txtDescription);
-        // Filler ô còn lại cho đều hàng
         inputPanel.add(new JLabel());
         inputPanel.add(new JLabel());
         inputPanel.add(new JLabel());
@@ -75,15 +53,12 @@ public class SecurityclearanceManagementJPanel extends JPanel {
         inputPanel.add(new JLabel());
         inputPanel.add(new JLabel());
 
-        // ====== Gộp các panel top ======
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
-        // topPanel.add(groupPanel); // nếu cần bật
         topPanel.add(inputPanel);
         add(topPanel, BorderLayout.NORTH);
 
-        // ====== Panel trung tâm: Table và Label đếm ======
         JPanel centerPanel = new JPanel(new BorderLayout());
 
         tableModel = new DefaultTableModel(
@@ -108,7 +83,7 @@ public class SecurityclearanceManagementJPanel extends JPanel {
         if (imgURL != null) {
             btn.setIcon(new ImageIcon(imgURL));
         } else {
-            btn.setText(text.substring(0, 1)); // fallback chữ cái đầu
+            btn.setText(text.substring(0, 1)); 
         }
 
         btn.setToolTipText(text);
@@ -134,7 +109,6 @@ public class SecurityclearanceManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters giữ nguyên
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tableModel; }
     public JTextField getTxtScID() { return txtScID; }
@@ -147,10 +121,5 @@ public class SecurityclearanceManagementJPanel extends JPanel {
     public JButton getBtnDelete() { return btnDelete; }
     public JButton getBtnRefresh() { return btnRefresh; }
     public JButton getBtnSearch() { return btnSearch; }
-    // Uncomment nếu thêm Group Stats
-    /*
-    public JButton getBtnGroupStats() { return btnGroupStats; }
-    public JComboBox<String> getComboField1() { return comboField1; }
-    public JComboBox<String> getComboField2() { return comboField2; }
-    */
+  
 }

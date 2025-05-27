@@ -16,7 +16,6 @@ public class AccountManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ==== Thanh công cụ (hàng trên cùng) ====
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -34,7 +33,6 @@ public class AccountManagementJPanel extends JPanel {
         toolPanel.add(txtSearch);
         toolPanel.add(btnRefresh);
 
-        // ==== Form nhập liệu ====
         JPanel inputPanel = new JPanel(new GridLayout(2, 4, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Account Information"));
 
@@ -48,14 +46,12 @@ public class AccountManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Password:")); inputPanel.add(txtPassword);
         inputPanel.add(new JLabel("Gmail:")); inputPanel.add(txtGmail);
 
-        // ==== Gộp phần trên cùng ====
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
         topPanel.add(inputPanel);
         add(topPanel, BorderLayout.NORTH);
 
-        // ==== Bảng và tổng số dòng ====
         JPanel centerPanel = new JPanel(new BorderLayout());
 
         tableModel = new DefaultTableModel(
@@ -107,7 +103,6 @@ public class AccountManagementJPanel extends JPanel {
         return btn;
     }
 
-    // ===== Getters để controller sử dụng =====
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tableModel; }
     public JTextField getTxtConfirm() { return txtConfirm; }

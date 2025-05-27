@@ -17,7 +17,6 @@ public class TeamManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ==== Hàng 1: Thanh chức năng ====
         JPanel functionPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         functionPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -35,7 +34,6 @@ public class TeamManagementJPanel extends JPanel {
         functionPanel.add(txtSearch);
         functionPanel.add(btnRefresh);
 
-        // ==== Hàng 2: Group Stats + ComboBox ====
         JPanel groupPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         groupPanel.setBorder(BorderFactory.createTitledBorder("Group Statistics Option"));
 
@@ -48,7 +46,6 @@ public class TeamManagementJPanel extends JPanel {
         groupPanel.add(comboField1);
         groupPanel.add(comboField2);
 
-        // ==== Hàng 3: Form nhập liệu Team ====
         JPanel inputPanel = new JPanel(new GridLayout(2, 6, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Team Information"));
 
@@ -63,7 +60,6 @@ public class TeamManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Meeting Frequency:"));
         inputPanel.add(txtMeetingFrequency);
 
-        // Thêm ô trống cho cân bằng lưới
         inputPanel.add(new JLabel());
         inputPanel.add(new JLabel());
         inputPanel.add(new JLabel());
@@ -71,7 +67,6 @@ public class TeamManagementJPanel extends JPanel {
         inputPanel.add(new JLabel());
         inputPanel.add(new JLabel());
 
-        // ==== Gộp các panel trên thành topPanel ====
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(functionPanel);
@@ -80,7 +75,6 @@ public class TeamManagementJPanel extends JPanel {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // ==== Panel chính chứa bảng Team và label count ====
         JPanel centerPanel = new JPanel(new BorderLayout());
 
         tableModel = new DefaultTableModel(
@@ -132,7 +126,6 @@ public class TeamManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tableModel; }
     public JTextField getTxtTeamID() { return txtTeamID; }

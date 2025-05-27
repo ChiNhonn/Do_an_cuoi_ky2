@@ -16,7 +16,6 @@ public class AffiliationManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ==== Hàng 1: Thanh công cụ ====
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -34,7 +33,6 @@ public class AffiliationManagementJPanel extends JPanel {
         toolPanel.add(txtSearch);
         toolPanel.add(btnRefresh);
 
-        // ==== Hàng 2: Form nhập liệu Affiliation ====
         JPanel inputPanel = new JPanel(new GridLayout(2, 4, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Affiliation Information"));
 
@@ -47,17 +45,14 @@ public class AffiliationManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Description:")); inputPanel.add(txtDescription);
         inputPanel.add(new JLabel()); inputPanel.add(new JLabel()); // filler
 
-        // ==== Gộp topPanel ====
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
         topPanel.add(inputPanel);
         add(topPanel, BorderLayout.NORTH);
 
-        // ==== Panel trung tâm: chứa bảng Affiliation và Total ====
         JPanel centerPanel = new JPanel(new BorderLayout());
 
-        // ==== Table Affiliation ====
         tablemodel = new DefaultTableModel(
                 new String[]{"Affiliation ID", "Name", "Description"}, 0);
         table = new JTable(tablemodel);
@@ -65,7 +60,6 @@ public class AffiliationManagementJPanel extends JPanel {
         scrollPane.setBorder(BorderFactory.createTitledBorder("Affiliation List"));
         centerPanel.add(scrollPane, BorderLayout.CENTER);
 
-        // ==== Count Label ====
         lblCount = new JLabel("Total: 0");
         JPanel countPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         countPanel.add(lblCount);
@@ -108,7 +102,6 @@ public class AffiliationManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tablemodel; }
     public JTextField getTxtAffiliationID() { return txtAffiliationID; }

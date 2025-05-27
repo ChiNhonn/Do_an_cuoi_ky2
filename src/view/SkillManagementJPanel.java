@@ -16,7 +16,6 @@ public class SkillManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ====== Thanh công cụ + Tìm kiếm ======
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -32,7 +31,6 @@ public class SkillManagementJPanel extends JPanel {
         toolPanel.add(btnSearch);
         toolPanel.add(txtSearch);
 
-        // ====== Form nhập liệu Skill ======
         JPanel inputPanel = new JPanel(new GridLayout(1, 4, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Skill Information"));
 
@@ -44,7 +42,6 @@ public class SkillManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Skill Name:"));
         inputPanel.add(txtSkillName);
 
-        // ====== Gộp trên cùng ======
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
@@ -52,14 +49,12 @@ public class SkillManagementJPanel extends JPanel {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // ====== Bảng Skills ======
         tableModel = new DefaultTableModel(new String[]{"Skill ID", "Skill Name"}, 0);
         table = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBorder(BorderFactory.createTitledBorder("Skills"));
         add(scrollPane, BorderLayout.CENTER);
 
-        // ====== Label đếm tổng ======
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         lblCount = new JLabel("Total: 0");
         bottomPanel.add(lblCount);
@@ -73,7 +68,7 @@ public class SkillManagementJPanel extends JPanel {
         if (imgURL != null) {
             btn.setIcon(new ImageIcon(imgURL));
         } else {
-            btn.setText(text.substring(0, 1)); // fallback chữ đầu
+            btn.setText(text.substring(0, 1));
         }
 
         btn.setToolTipText(text);
@@ -99,7 +94,6 @@ public class SkillManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters giữ nguyên
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tableModel; }
     public JTextField getTxtSkillID() { return txtSkillID; }

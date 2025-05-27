@@ -44,7 +44,7 @@ public class SecurityclearanceDAO implements DAOInterface<Securityclearance>{
 	        pst.setString(2, t.getDescription());
 	        pst.setInt(3, t.getSc_ID());
 
-	        result = pst.executeUpdate(); // ← cần thêm dòng này để thực thi cập nhật
+	        result = pst.executeUpdate(); 
 	        pst.close();
 	        JDBCUtil.closeConnection(c);
 	    } catch (Exception e) {

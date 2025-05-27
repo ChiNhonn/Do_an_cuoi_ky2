@@ -22,7 +22,6 @@ public class AccountController {
         addEventListeners();
     }
 
-    // Load dữ liệu tài khoản vào bảng
     private void loadAccountData() {
         DefaultTableModel model = view.getTableModel();
         model.setRowCount(0);
@@ -33,7 +32,6 @@ public class AccountController {
         view.getLblCount().setText("Total: " + list.size());
     }
 
-    // Xoá dữ liệu trong form nhập liệu
     private void clearForm() {
         view.getTxtConfirm().setText("");
         view.getTxtUsername().setText("");
@@ -42,7 +40,6 @@ public class AccountController {
         view.getTxtSearch().setText("");
     }
 
-    // Tìm kiếm tài khoản theo từ khóa
     private void searchAccount() {
         String keyword = view.getTxtSearch().getText().trim();
         DefaultTableModel model = view.getTableModel();
@@ -54,7 +51,6 @@ public class AccountController {
         view.getLblCount().setText("Total: " + list.size());
     }
 
-    // Thêm tài khoản mới
     private void addAccount() {
         try {
             String confirm = view.getTxtConfirm().getText().trim();
@@ -82,7 +78,6 @@ public class AccountController {
         }
     }
 
-    // Cập nhật tài khoản
     private void updateAccount() {
         try {
             String confirm = view.getTxtConfirm().getText().trim();
@@ -104,7 +99,6 @@ public class AccountController {
         }
     }
 
-    // Xoá tài khoản
     private void deleteAccount() {
         try {
             String confirm = view.getTxtConfirm().getText().trim();
@@ -124,7 +118,6 @@ public class AccountController {
         }
     }
 
-    // Gán sự kiện cho các nút và bảng
     private void addEventListeners() {
         view.getBtnSearch().addActionListener(e -> searchAccount());
         view.getBtnRefresh().addActionListener(e -> {

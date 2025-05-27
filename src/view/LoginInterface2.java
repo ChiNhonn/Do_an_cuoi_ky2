@@ -76,7 +76,6 @@ public class LoginInterface2 extends JFrame {
         passwordField.setBounds(520, 130, 180, 30);
         backgroundLabel.add(passwordField);
 
-        // Nút Login đẹp
         JButton loginButton = new JButton("Login");
         loginButton.setFont(new Font("Tahoma", Font.BOLD, 16));
         loginButton.setBounds(420, 200, 120, 40);
@@ -96,7 +95,6 @@ public class LoginInterface2 extends JFrame {
             }
         });
 
-        // Nút Register đẹp
         JButton registerButton = new JButton("Register");
         registerButton.setFont(new Font("Tahoma", Font.BOLD, 16));
         registerButton.setBounds(580, 200, 120, 40);
@@ -116,7 +114,6 @@ public class LoginInterface2 extends JFrame {
             }
         });
 
-        // Xử lý sự kiện đăng nhập
         loginButton.addActionListener((ActionEvent e) -> {
             String username = usernameField.getText().trim();
             String password = String.valueOf(passwordField.getPassword()).trim();
@@ -136,7 +133,6 @@ public class LoginInterface2 extends JFrame {
             }
         });
 
-        // Xử lý sự kiện register
         registerButton.addActionListener(e -> {
             LoginInterface registerForm = new LoginInterface();
             registerForm.setVisible(true);

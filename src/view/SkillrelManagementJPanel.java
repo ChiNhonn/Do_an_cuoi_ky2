@@ -16,7 +16,6 @@ public class SkillrelManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ==== Hàng 1: Thanh chức năng (function panel) ====
         JPanel functionPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         functionPanel.setBorder(BorderFactory.createTitledBorder("Functions"));
 
@@ -34,7 +33,6 @@ public class SkillrelManagementJPanel extends JPanel {
         functionPanel.add(txtSearch);
         functionPanel.add(btnSearch);
 
-        // ==== Hàng 2: Nhập liệu thông tin relation (information panel) ====
         JPanel infoPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         infoPanel.setBorder(BorderFactory.createTitledBorder("Relation Information"));
 
@@ -46,7 +44,6 @@ public class SkillrelManagementJPanel extends JPanel {
         infoPanel.add(new JLabel("Skill ID:"));
         infoPanel.add(txtSkillID);
 
-        // ==== Gộp 2 hàng trên thành panel trên cùng ====
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(functionPanel);
@@ -54,14 +51,12 @@ public class SkillrelManagementJPanel extends JPanel {
 
         add(topPanel, BorderLayout.NORTH);
 
-        // ==== Bảng quan hệ ====
         tableModel = new DefaultTableModel(new String[]{"Agent ID", "Skill ID"}, 0);
         table = new JTable(tableModel);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBorder(BorderFactory.createTitledBorder("Agent Skills"));
         add(scrollPane, BorderLayout.CENTER);
 
-        // ==== Label tổng số ====
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         lblCount = new JLabel("Total Relations: 0");
         bottomPanel.add(lblCount);
@@ -101,7 +96,6 @@ public class SkillrelManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tableModel; }
     public JTextField getTxtAgentID() { return txtAgentID; }

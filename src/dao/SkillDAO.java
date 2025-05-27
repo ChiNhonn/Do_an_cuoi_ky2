@@ -19,7 +19,7 @@ public class SkillDAO implements DAOInterface<Skill>{
 	    try {
 	        Connection c = JDBCUtil.getConnection();
 	        String sql = "INSERT INTO skill(skill_id, skill_name) VALUES(?, ?)";
-	        PreparedStatement pst = c.prepareStatement(sql); // dùng prepareStatement thay vì prepareCall
+	        PreparedStatement pst = c.prepareStatement(sql); 
 
 	        pst.setInt(1, t.getSkill_ID());
 	        pst.setString(2, t.getSkill_name());

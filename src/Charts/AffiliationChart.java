@@ -54,8 +54,8 @@ public class AffiliationChart extends JPanel {
         refreshIcon = new ImageIcon(image);
         
         JButton refreshButton = new JButton("Refresh", refreshIcon);
-        refreshButton.setHorizontalTextPosition(SwingConstants.CENTER); // Chữ canh giữa
-        refreshButton.setVerticalTextPosition(SwingConstants.BOTTOM);   // Chữ nằm dưới icon
+        refreshButton.setHorizontalTextPosition(SwingConstants.CENTER);
+        refreshButton.setVerticalTextPosition(SwingConstants.BOTTOM);   
         refreshButton.setFocusPainted(false);
         refreshButton.setBackground(new Color(100, 149, 237));
         refreshButton.setForeground(Color.WHITE);

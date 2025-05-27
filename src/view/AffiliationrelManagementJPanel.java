@@ -16,7 +16,6 @@ public class AffiliationrelManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ==== Hàng 1: Thanh công cụ ====
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -34,7 +33,6 @@ public class AffiliationrelManagementJPanel extends JPanel {
         toolPanel.add(txtSearch);
         toolPanel.add(btnRefresh);
 
-        // ==== Hàng 2: Form nhập liệu ====
         JPanel inputPanel = new JPanel(new GridLayout(2, 4, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("AffiliationRel Information"));
 
@@ -47,14 +45,12 @@ public class AffiliationrelManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Strength:")); inputPanel.add(txtStrength);
         inputPanel.add(new JLabel()); inputPanel.add(new JLabel()); // filler
 
-        // ==== Gộp topPanel ====
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
         topPanel.add(inputPanel);
         add(topPanel, BorderLayout.NORTH);
 
-        // ==== Panel trung tâm: chứa bảng AffiliationRel và Total ====
         JPanel centerPanel = new JPanel(new BorderLayout());
 
         tableModel = new DefaultTableModel(
@@ -64,7 +60,6 @@ public class AffiliationrelManagementJPanel extends JPanel {
         scrollPane.setBorder(BorderFactory.createTitledBorder("AffiliationRel List"));
         centerPanel.add(scrollPane, BorderLayout.CENTER);
 
-        // ==== Count Label ====
         lblCount = new JLabel("Total: 0");
         JPanel countPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         countPanel.add(lblCount);
@@ -107,7 +102,6 @@ public class AffiliationrelManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tableModel; }
     public JTextField getTxtAgentID() { return txtAgentID; }

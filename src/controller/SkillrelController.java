@@ -46,26 +46,22 @@ public class SkillrelController {
             int agentID = Integer.parseInt(view.getTxtAgentID().getText().trim());
             int skillID = Integer.parseInt(view.getTxtSkillID().getText().trim());
 
-            // Kiểm tra Agent ID có tồn tại không
             if (!AgentDAO.getInstance().isAgentIDExists(agentID)) {
                 JOptionPane.showMessageDialog(view, "Agent ID does not exist!", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            // Kiểm tra Skill ID có tồn tại không
             if (!SkillDAO.getInstance().isSkillIDExists(skillID)) {
                 JOptionPane.showMessageDialog(view, "Skill ID does not exist!", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            // Kiểm tra mối quan hệ đã tồn tại chưa
             Skillrel rel = new Skillrel(agentID, skillID);
             if (SkillrelDAO.getInstance().exists(rel)) {
                 JOptionPane.showMessageDialog(view, "This agent-skill relation already exists!", "Warning", JOptionPane.WARNING_MESSAGE);
                 return;
             }
 
-            // Thêm quan hệ mới
             int result = SkillrelDAO.getInstance().insert(rel);
             if (result > 0) {
                 loadData();

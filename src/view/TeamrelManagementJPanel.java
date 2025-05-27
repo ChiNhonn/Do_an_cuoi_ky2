@@ -16,7 +16,6 @@ public class TeamrelManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ==== Hàng 1: Thanh công cụ (chức năng) ====
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -32,10 +31,6 @@ public class TeamrelManagementJPanel extends JPanel {
         toolPanel.add(btnSearch);
         toolPanel.add(txtSearch);
 
-        // ==== Hàng 2: (Teamrel không cần group stats nên bỏ)====
-        // Nếu bạn muốn thêm combo lọc, có thể thêm sau
-
-        // ==== Hàng 3: Form nhập liệu ====
         JPanel inputPanel = new JPanel(new GridLayout(1, 4, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Teamrel Information"));
 
@@ -47,16 +42,14 @@ public class TeamrelManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Team ID:"));
         inputPanel.add(txtTeamID);
 
-        // ==== Gộp topPanel ====
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
-        topPanel.add(Box.createVerticalStrut(10));  // khoảng cách
+        topPanel.add(Box.createVerticalStrut(10));  
         topPanel.add(inputPanel);
 
         add(topPanel, BorderLayout.NORTH);
 
-        // ==== Bảng dữ liệu ====
         tableModel = new DefaultTableModel(
                 new String[]{"Agent ID", "Team ID"}, 0);
         table = new JTable(tableModel);
@@ -64,7 +57,6 @@ public class TeamrelManagementJPanel extends JPanel {
         scrollPane.setBorder(BorderFactory.createTitledBorder("Teamrel List"));
         add(scrollPane, BorderLayout.CENTER);
 
-        // ==== Panel hiển thị tổng số ====
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         lblCount = new JLabel("Total Relations: 0");
         bottomPanel.add(lblCount);
@@ -105,7 +97,6 @@ public class TeamrelManagementJPanel extends JPanel {
         return btn;
     }
 
-    // Getters
     public JTable getTable() { return table; }
     public DefaultTableModel getTableModel() { return tableModel; }
     public JTextField getTxtAgentID() { return txtAgentID; }

@@ -16,7 +16,6 @@ public class LanguageManagementJPanel extends JPanel {
         setLayout(new BorderLayout(10, 10));
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
-        // ==== Hàng 1: Thanh công cụ ====
         JPanel toolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
         toolPanel.setBorder(BorderFactory.createTitledBorder("Function"));
 
@@ -34,9 +33,6 @@ public class LanguageManagementJPanel extends JPanel {
         toolPanel.add(txtSearch);
         toolPanel.add(btnRefresh);
 
-        // ==== Bỏ Group Stats, nên không có panel nào cho phần này ====
-
-        // ==== Hàng 2 (trước đây là inputPanel): Form nhập liệu Language ====
         JPanel inputPanel = new JPanel(new GridLayout(2, 2, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Language Information"));
 
@@ -48,17 +44,14 @@ public class LanguageManagementJPanel extends JPanel {
         inputPanel.add(new JLabel("Language Name:"));
         inputPanel.add(txtLanguageName);
 
-        // ==== Gộp topPanel ====
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(toolPanel);
         topPanel.add(inputPanel);
         add(topPanel, BorderLayout.NORTH);
 
-        // ==== Panel trung tâm: chứa bảng Language và Total ====
         JPanel centerPanel = new JPanel(new BorderLayout());
 
-        // ==== Table Language ====
         tableModel = new DefaultTableModel(
                 new String[]{"Language ID", "Language Name"}, 0);
         table = new JTable(tableModel);
@@ -66,7 +59,6 @@ public class LanguageManagementJPanel extends JPanel {
         scrollPane.setBorder(BorderFactory.createTitledBorder("Language List"));
         centerPanel.add(scrollPane, BorderLayout.CENTER);
 
-        // ==== Count Label ====
         lblCount = new JLabel("Total: 0");
         JPanel countPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         countPanel.add(lblCount);
