@@ -1,44 +1,55 @@
-Tác giả: Đường Tri Nhân
-Phần mềm quản lý Spy Agency2024
+Author: Đường Tri Nhân  
+Spy Agency2024 Management Software
 
-File word và slide PowerPoint nằm trong thư mục BaoCao
+Word and PowerPoint files are located in the "OOP subject report" folder.
 
-SpyAgency2024 là một phần mềm quản lý dữ liệu tình báo được phát triển bằng Java theo mô hình MVC, sử dụng MySQL để lưu trữ dữ liệu và JFreeChart để trực quan hóa. Ứng dụng cho phép quản lý thông tin agent, tổ chức, quan hệ liên kết, và tài khoản người dùng,...
-
----
-
-## 🎯 Tính Năng Chính
-
-- ✅ Quản lý Affiliation: thêm, sửa, xóa, tìm kiếm, làm mới 
-- ✅ Quản lý Affiliationrel: thêm, sửa, xóa, tìm kiếm, làm mới 
-- ✅ Quản lý Agent: thêm, sửa, xóa, tìm kiếm, làm mới, nhóm lại
-- ✅ Quản lý language: thêm, sửa, xóa, tìm kiếm, làm mới 
-- ✅ Quản lý languagerel: thêm, xóa, tìm kiếm
-- ✅ Quản lý Mission: thêm, sửa, xóa, tìm kiếm, làm mới, nhóm lại
-- ✅ Quản lý securityclearance: thêm, sửa, xóa, tìm kiếm, làm mới 
-- ✅ Quản lý skill: thêm, xóa, tìm kiếm
-- ✅ Quản lý skillrel: thêm, xóa, tìm kiếm
-- ✅ Quản lý team: thêm, sửa, xóa, tìm kiếm, làm mới, nhóm lại
-- ✅ Quản lý teamrel: thêm, xóa, tìm kiếm
-- ✅ Quản lý tài khoản người dùng (Account): thêm, sửa, xóa, tìm kiếm, làm mới
-- ✅ Biểu đồ thống kê
-- ✅ Giao diện hiện đại với Java Swing
+SpyAgency2024 is an intelligence data management software developed in Java using the MVC architecture. It utilizes MySQL for data storage and JFreeChart for visualization. The application allows for managing agent information, organizations, affiliations, user accounts, and more.
 
 ---
 
-## 🧱 Công Nghệ Sử Dụng
+## 🎯 Main Features
 
-| Thành phần       | Công nghệ     |
-|------------------|---------------|
-| Ngôn ngữ         | Java          |
-| Giao diện        | Java Swing    |
-| Kiến trúc        | MVC           |
-| Cơ sở dữ liệu    | MySQL         |
-| Thư viện biểu đồ | JFreeChart    |
+✅ Affiliation Management: add, edit, delete, search, refresh
+
+✅ Affiliation Relationship Management: add, edit, delete, search, refresh
+
+✅ Agent Management: add, edit, delete, search, refresh, group
+
+✅ Language Management: add, edit, delete, search, refresh
+
+✅ Language Relationship Management: add, delete, search
+
+✅ Mission Management: add, edit, delete, search, refresh, group
+
+✅ Security Clearance Management: add, edit, delete, search, refresh
+
+✅ Skill Management: add, delete, search
+
+✅ Skill Relationship Management: add, delete, search
+
+✅ Team Management: add, edit, delete, search, refresh, group
+
+✅ Team Relationship Management: add, delete, search
+
+✅ User Account Management: add, edit, delete, search, refresh
+
+✅ Statistical Charts
+
+✅ Modern interface using Java Swing
 
 ---
 
-## 📂 Cấu Trúc Thư Mục
+## 🧱 Technologies Used
+
+ Programming Lang: Java  
+ GUI : JavaSwing  
+ Architecture: MVC  
+ DataBase: MySQL  
+ Chart Library:  JFreeChart  
+
+---
+
+## 📂 Project Structure
 Do_an_cuoi_ky_2/
 ├── src/
 │ ├── model/
@@ -55,140 +66,145 @@ Do_an_cuoi_ky_2/
 
 ---
 
-## ⚙️ Hướng Dẫn Cài Đặt & Chạy Chương Trình
+## ⚙️  Installation & Usage Guide  
 
-I. **Cài đặt các phần mềm cần thiết:**
- - Java JDK 8 trở lên
+I. **Required Software:**
+ - Java JDK 8 or higher
  - MySQL Server
  - IDE Java (Eclipse, IntelliJ,...)
- - Thêm thư viện: `mysql-connector-java`, `jfreechart`, `jcommon`(có trong file code)
+ - Required libraries: `mysql-connector-java`, `jfreechart`, `jcommon`(included in the code)
    
    
    
-II. **Hướng dẫn tải về **  
-	Tải source code về: https://github.com/ChiNhonn/Do_an_cuoi_ky2.git
+II. **Download Instructions **  
+	Download the source code at: https://github.com/ChiNhonn/Do_an_cuoi_ky2.git
 	
 	
+-	Link youtube: https://youtu.be/-VdsFRrMeCM
 	
-III. **Khởi tạo CSDL:**
-   - Mở MySQL Workbench hoặc phpMyAdmin
-   - Chạy file: `Database/spy_agency.sql`
-   - Mở xampp và vào trang http://localhost/phpmyadmin/ tạo 1 database mới có tên là spy_agency và import cơ sở dữ liệu trong folder Database -> file spy_agency.sql trong source code.
+	
+-	Kênh Nhơn Chi
+	
+	
+III. **Database Setup:**
+   - Open MySQL Workbench or phpMyAdmin
+   - Run file: `Database/spy_agency.sql`
+   - Or open XAMPP, go to http://localhost/phpmyadmin, Create a new database named spy_agency Import the spy_agency.sql file from the Database folder in the source code.
 
 
 
 
-IV. **Sử dụng eclipse để chạy **
+IV. **Open the project in Eclipse and build it. **
   	
    
- V. **Vào view chạy ở class loginInterface2.**
+ V. **Go to the view package and run the class loginInterface2.**
  
-- Tài khoản 
+ Login credentials:
 - Username: admin123
 - Password: admin123
 
-### Giao diện đăng nhập: 
+### login Inteface: 
 
 
-![Giao diện đăng nhập](images/dangnhap.png)
+![login Inteface](images/dangnhap.png)
 
-### Giao diện đăng ký:
-
-
-![Giao diện đăng ký](images/dangky.png)
-
-### Giao diện chính :
+### Register Interface:
 
 
-![Giao diện chính](images/giaodienchinh.png)
+![Register Interface](images/dangky.png)
+
+### Dashboard :
+
+
+![Dashboard](images/giaodienchinh.png)
    
    
-### Giao diện chức năng 1:
+### Feature 1:
 
 
-![Giao diện chức năng 1](images/affiliation.png)
+![Feature 1](images/affiliation.png)
    
-### Giao diện chức năng 2:
+### Feature 2:
 
 
-![Giao diện chức năng 2](images/affiliationrel.png)
+![Feature 2](images/affiliationrel.png)
 
-### Giao diện chức năng 3:
-
-
-![Giao diện chức năng 3](images/agent.png)
-
-### Giao diện chức năng 4:
+### Feature 3:
 
 
-![Giao diện chức năng 4](images/language.png)
+![Feature 3](images/agent.png)
 
-### Giao diện chức năng 5:
-
-
-![Giao diện chức năng 5](images/languagerel.png)
-
-### Giao diện chức năng 6:
+### Feature 4:
 
 
-![Giao diện chức năng 6](images/mission.png)
+![Feature 4](images/language.png)
 
-### Giao diện chức năng 7:
-
-
-![Giao diện chức năng 7](images/sc.png)
-
-### Giao diện chức năng 8:
+### Feature 5:
 
 
-![Giao diện chức năng 8](images/skill.png)
+![Feature 5](images/languagerel.png)
 
-### Giao diện chức năng 9:
-
-
-![Giao diện chức năng 9](images/skillrel.png)
-
-### Giao diện chức năng 10:
+### Feature 6:
 
 
-![Giao diện chức năng 10](images/team.png)
+![Feature 6](images/mission.png)
 
-### Giao diện chức năng 11:
-
-
-![Giao diện chức năng 11](images/teamrel.png)
-
-### Giao diện quản lý người dùng :
+### Feature 7:
 
 
-![Giao diện quản lý người dùng](images/account.png)
+![Feature 7](images/sc.png)
 
-### Giao diện chart chính :
-
-
-![Giao diện chart chính](images/chart.png)
-
-### Giao diện chart 2:
+### Feature 8:
 
 
-![Giao diện chart 2](images/chart2.png)
+![Feature 8](images/skill.png)
 
-### Giao diện chart 3:
-
-
-![Giao diện chart 3](images/chart3.png)
-
-### Giao diện chart 4:
+### Feature 9:
 
 
-![Giao diện chart 4](images/chart4.png)
+![Feature 9](images/skillrel.png)
+
+### Feature 10:
 
 
-### Giao diện chart 5:
+![Feature 10](images/team.png)
 
-![Giao diện chart 5](images/chart5.png)
+### Feature 11:
 
 
-### Giao diện chart 6:
+![Feature 11](images/teamrel.png)
 
-![Giao diện chart 6](images/chart6.png)
+### User Account Management :
+
+
+![User Account Management](images/account.png)
+
+### Chart Interface 1 :
+
+
+![Chart Interface 1](images/chart.png)
+
+### Chart Interface 2:
+
+
+![Chart Interface 2](images/chart2.png)
+
+### Chart Interface 3:
+
+
+![Chart Interface 3](images/chart3.png)
+
+### Chart Interface 4:
+
+
+![Chart Interface 4](images/chart4.png)
+
+
+### Chart Interface 5:
+
+![Chart Interface 5](images/chart5.png)
+
+
+### Chart Interface 6:
+
+![Chart Interface 6](images/chart6.png)
